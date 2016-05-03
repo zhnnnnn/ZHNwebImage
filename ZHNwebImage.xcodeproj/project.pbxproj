@@ -9,12 +9,20 @@
 /* Begin PBXBuildFile section */
 		CD3426161CD8A74800898896 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3426151CD8A74800898896 /* main.m */; };
 		CD3426191CD8A74800898896 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3426181CD8A74800898896 /* AppDelegate.m */; };
-		CD34261C1CD8A74800898896 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD34261B1CD8A74800898896 /* ViewController.m */; };
 		CD34261F1CD8A74800898896 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD34261D1CD8A74800898896 /* Main.storyboard */; };
 		CD3426211CD8A74800898896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3426201CD8A74800898896 /* Assets.xcassets */; };
 		CD3426241CD8A74800898896 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3426221CD8A74800898896 /* LaunchScreen.storyboard */; };
 		CD34262F1CD8A74800898896 /* ZHNwebImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD34262E1CD8A74800898896 /* ZHNwebImageTests.m */; };
 		CD34263A1CD8A74800898896 /* ZHNwebImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3426391CD8A74800898896 /* ZHNwebImageUITests.m */; };
+		CD3426491CD8A76F00898896 /* ceshiTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3426481CD8A76F00898896 /* ceshiTableVC.m */; };
+		CD34264C1CD8A77700898896 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD34264B1CD8A77700898896 /* ViewController.m */; };
+		CD34265C1CD8A7E100898896 /* UIImageView+ZHNimage.m in Sources */ = {isa = PBXBuildFile; fileRef = CD34264F1CD8A7E100898896 /* UIImageView+ZHNimage.m */; };
+		CD34265D1CD8A7E100898896 /* UIImageView+ZHNimageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3426511CD8A7E100898896 /* UIImageView+ZHNimageCache.m */; };
+		CD34265E1CD8A7E100898896 /* ZHNdiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3426531CD8A7E100898896 /* ZHNdiskCache.m */; };
+		CD34265F1CD8A7E100898896 /* ZHNimageDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3426551CD8A7E100898896 /* ZHNimageDownLoader.m */; };
+		CD3426601CD8A7E100898896 /* ZHNmemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3426571CD8A7E100898896 /* ZHNmemoryCache.m */; };
+		CD3426611CD8A7E100898896 /* ZHNwebImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3426591CD8A7E100898896 /* ZHNwebImageCache.m */; };
+		CD3426621CD8A7E100898896 /* ZHNwebImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CD34265B1CD8A7E100898896 /* ZHNwebImageOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +47,6 @@
 		CD3426151CD8A74800898896 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CD3426171CD8A74800898896 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CD3426181CD8A74800898896 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CD34261A1CD8A74800898896 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CD34261B1CD8A74800898896 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CD34261E1CD8A74800898896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD3426201CD8A74800898896 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD3426231CD8A74800898896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +57,24 @@
 		CD3426351CD8A74800898896 /* ZHNwebImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZHNwebImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD3426391CD8A74800898896 /* ZHNwebImageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHNwebImageUITests.m; sourceTree = "<group>"; };
 		CD34263B1CD8A74800898896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD3426471CD8A76F00898896 /* ceshiTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ceshiTableVC.h; sourceTree = "<group>"; };
+		CD3426481CD8A76F00898896 /* ceshiTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ceshiTableVC.m; sourceTree = "<group>"; };
+		CD34264A1CD8A77700898896 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CD34264B1CD8A77700898896 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CD34264E1CD8A7E100898896 /* UIImageView+ZHNimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZHNimage.h"; sourceTree = "<group>"; };
+		CD34264F1CD8A7E100898896 /* UIImageView+ZHNimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZHNimage.m"; sourceTree = "<group>"; };
+		CD3426501CD8A7E100898896 /* UIImageView+ZHNimageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZHNimageCache.h"; sourceTree = "<group>"; };
+		CD3426511CD8A7E100898896 /* UIImageView+ZHNimageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZHNimageCache.m"; sourceTree = "<group>"; };
+		CD3426521CD8A7E100898896 /* ZHNdiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNdiskCache.h; sourceTree = "<group>"; };
+		CD3426531CD8A7E100898896 /* ZHNdiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNdiskCache.m; sourceTree = "<group>"; };
+		CD3426541CD8A7E100898896 /* ZHNimageDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNimageDownLoader.h; sourceTree = "<group>"; };
+		CD3426551CD8A7E100898896 /* ZHNimageDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNimageDownLoader.m; sourceTree = "<group>"; };
+		CD3426561CD8A7E100898896 /* ZHNmemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNmemoryCache.h; sourceTree = "<group>"; };
+		CD3426571CD8A7E100898896 /* ZHNmemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNmemoryCache.m; sourceTree = "<group>"; };
+		CD3426581CD8A7E100898896 /* ZHNwebImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNwebImageCache.h; sourceTree = "<group>"; };
+		CD3426591CD8A7E100898896 /* ZHNwebImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNwebImageCache.m; sourceTree = "<group>"; };
+		CD34265A1CD8A7E100898896 /* ZHNwebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNwebImageOperation.h; sourceTree = "<group>"; };
+		CD34265B1CD8A7E100898896 /* ZHNwebImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNwebImageOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +125,13 @@
 		CD3426131CD8A74800898896 /* ZHNwebImage */ = {
 			isa = PBXGroup;
 			children = (
+				CD34264D1CD8A7E100898896 /* zhncustomWebImage */,
 				CD3426171CD8A74800898896 /* AppDelegate.h */,
 				CD3426181CD8A74800898896 /* AppDelegate.m */,
-				CD34261A1CD8A74800898896 /* ViewController.h */,
-				CD34261B1CD8A74800898896 /* ViewController.m */,
+				CD3426471CD8A76F00898896 /* ceshiTableVC.h */,
+				CD3426481CD8A76F00898896 /* ceshiTableVC.m */,
+				CD34264A1CD8A77700898896 /* ViewController.h */,
+				CD34264B1CD8A77700898896 /* ViewController.m */,
 				CD34261D1CD8A74800898896 /* Main.storyboard */,
 				CD3426201CD8A74800898896 /* Assets.xcassets */,
 				CD3426221CD8A74800898896 /* LaunchScreen.storyboard */,
@@ -138,6 +165,27 @@
 				CD34263B1CD8A74800898896 /* Info.plist */,
 			);
 			path = ZHNwebImageUITests;
+			sourceTree = "<group>";
+		};
+		CD34264D1CD8A7E100898896 /* zhncustomWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				CD34264E1CD8A7E100898896 /* UIImageView+ZHNimage.h */,
+				CD34264F1CD8A7E100898896 /* UIImageView+ZHNimage.m */,
+				CD3426501CD8A7E100898896 /* UIImageView+ZHNimageCache.h */,
+				CD3426511CD8A7E100898896 /* UIImageView+ZHNimageCache.m */,
+				CD3426521CD8A7E100898896 /* ZHNdiskCache.h */,
+				CD3426531CD8A7E100898896 /* ZHNdiskCache.m */,
+				CD3426541CD8A7E100898896 /* ZHNimageDownLoader.h */,
+				CD3426551CD8A7E100898896 /* ZHNimageDownLoader.m */,
+				CD3426561CD8A7E100898896 /* ZHNmemoryCache.h */,
+				CD3426571CD8A7E100898896 /* ZHNmemoryCache.m */,
+				CD3426581CD8A7E100898896 /* ZHNwebImageCache.h */,
+				CD3426591CD8A7E100898896 /* ZHNwebImageCache.m */,
+				CD34265A1CD8A7E100898896 /* ZHNwebImageOperation.h */,
+				CD34265B1CD8A7E100898896 /* ZHNwebImageOperation.m */,
+			);
+			path = zhncustomWebImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +318,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD34261C1CD8A74800898896 /* ViewController.m in Sources */,
+				CD34265C1CD8A7E100898896 /* UIImageView+ZHNimage.m in Sources */,
+				CD34265F1CD8A7E100898896 /* ZHNimageDownLoader.m in Sources */,
+				CD3426621CD8A7E100898896 /* ZHNwebImageOperation.m in Sources */,
+				CD3426491CD8A76F00898896 /* ceshiTableVC.m in Sources */,
 				CD3426191CD8A74800898896 /* AppDelegate.m in Sources */,
+				CD34264C1CD8A77700898896 /* ViewController.m in Sources */,
+				CD34265D1CD8A7E100898896 /* UIImageView+ZHNimageCache.m in Sources */,
+				CD34265E1CD8A7E100898896 /* ZHNdiskCache.m in Sources */,
+				CD3426601CD8A7E100898896 /* ZHNmemoryCache.m in Sources */,
+				CD3426611CD8A7E100898896 /* ZHNwebImageCache.m in Sources */,
 				CD3426161CD8A74800898896 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
