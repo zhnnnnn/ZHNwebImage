@@ -14,6 +14,9 @@ typedef void (^ZHNimageDownLoadProgressBlock)(unsigned long long total,unsigned 
 
 @class ZHNwebImageOperation;
 @interface ZHNimageDownLoader : NSObject
+
+- (NSOperationQueue *)delegateQueue;
+
 /**
  *  单例方法
  *

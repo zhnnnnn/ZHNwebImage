@@ -57,7 +57,7 @@
    ZHNwebImageOperation * imageOperation = [[ZHNimageDownLoader shareInstace] startDownLoadImageWithUrl:url imageviewObject:self progress:nil finished:^(NSData *data, NSError *error) {
        
        if (error) {
-           NSLog(@"aa");
+           NSLog(@"%@",error);
            return;
        }
         // 取消当前imageview的下载任务

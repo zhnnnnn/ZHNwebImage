@@ -7,13 +7,15 @@
 //
 
 #import "ZHNwebImageOperation.h"
+#import "ZHNimageDownLoader.h"
+#import "ZHNimageDownLoader.h"
 
-
-@interface ZHNwebImageOperation()<NSURLConnectionDataDelegate>{
+@interface ZHNwebImageOperation()<NSURLSessionDownloadDelegate>{
     BOOL        executing;  // 执行中
     BOOL        finished;   // 已完成
 }
-@property (nonatomic,strong) NSURLConnection *connection;// 任务
+@property (nonatomic,strong) NSURLSession *connection;// 任务
+@property (nonatomic,strong) NSURLSessionDownloadTask * downLoadTask;
 @property (nonatomic,strong) NSMutableData * data;
 @property (nonatomic, assign) unsigned long long totalLength;
 @property (nonatomic, assign) unsigned long long currentLength;
@@ -25,9 +27,13 @@
 @implementation ZHNwebImageOperation
 
 - (instancetype)initWithRequest:(NSURLRequest *)request progress:(ZHNimageDownLoadProgressBlock)progress completion:(ZHNimageDownLoadCallBackBlock)completion{
-
+    
     if (self = [super init]) {
-        self.connection = [[NSURLConnection alloc]initWithRequest:request delegate:self startImmediately:YES];
+        
+        NSURLSessionConfiguration * defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        self.connection = [NSURLSession sessionWithConfiguration:defaultConfiguration delegate:self delegateQueue:[[ZHNimageDownLoader shareInstace] delegateQueue]];
+        self.downLoadTask = [self.connection downloadTaskWithRequest:request];
+        
         self.data = [NSMutableData data];
         self.progressBlock = progress;
         self.callbackOnFinished = completion;
@@ -58,7 +64,7 @@
         // 必须为自定义的 operation 提供 autorelease pool，因为 operation 完成后需要销毁。
         @autoreleasepool {
             while (isFinished == NO && [self isCancelled] == NO){
-                [self.connection start];
+                [self.downLoadTask resume];
                 isFinished = YES;
             }
             [self completeOperation];
@@ -80,10 +86,6 @@
     [self didChangeValueForKey:@"isFinished"];
 }
 
-- (BOOL)isAsynchronous {
-    return YES;
-}
-
 - (BOOL)isExecuting {
     return executing;
 }
@@ -92,85 +94,54 @@
     return finished;
 }
 
-// 执行操作
-- (BOOL)performOperation:(NSOperation*)anOp
-{
-    BOOL        ranIt = NO;
-    
-    if ([anOp isReady] && ![anOp isCancelled])
-    {
-        if (![anOp isAsynchronous]) {
-            [anOp start];
-        }
-        else {
-            [NSThread detachNewThreadSelector:@selector(start)
-                                     toTarget:anOp withObject:nil];
-        }
-        ranIt = YES;
-    }
-    else if ([anOp isCancelled])
-    {
-        [self willChangeValueForKey:@"isFinished"];
-        [self willChangeValueForKey:@"isExecuting"];
-        executing = NO;
-        finished = YES;
-        [self didChangeValueForKey:@"isExecuting"];
-        [self didChangeValueForKey:@"isFinished"];
-        ranIt = YES;
-    }
-    return ranIt;
-}
 
 - (void)cancelDownLoad{
     [self cancel];
-    [self.connection cancel];
+    [self.downLoadTask cancel];
 }
 
-#pragma mark - 代理方法
-// 开始有响应
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    [self.data setLength:0];
-    self.totalLength = response.expectedContentLength;
-    self.currentLength = 0;
-}
-// 开始接收数据
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.data appendData:data];
-    self.currentLength += data.length;
-    
-    if (self.progressBlock) {
-        self.progressBlock(self.totalLength, self.currentLength);
-    }
-}
-// 数据下载完成
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+
+// 下载完成
+- (void)URLSession:(NSURLSession *)session
+      downloadTask:(NSURLSessionDownloadTask *)downloadTask
+didFinishDownloadingToURL:(NSURL *)location {
+    NSData *data = [NSData dataWithContentsOfURL:location];
     
     if (self.progressBlock) {
         self.progressBlock(self.totalLength, self.currentLength);
     }
     
     if (self.callbackOnFinished) {
-        self.callbackOnFinished([self.data copy], nil);
+        self.callbackOnFinished(data, nil);
+        
         // 防止重复调用
         self.callbackOnFinished = nil;
     }
-    [self.data setLength:0];
-    self.data = nil;
-    [self cancel];
 }
-// 数据下载失败
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+
+// 下载过程
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
+    self.currentLength = totalBytesWritten;
+    self.totalLength = totalBytesExpectedToWrite;
     
+    if (self.progressBlock) {
+        self.progressBlock(self.totalLength, self.currentLength);
+    }
+}
+
+// 下载失败
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     if ([error code] != NSURLErrorCancelled) {
         if (self.callbackOnFinished) {
             self.callbackOnFinished(nil, error);
         }
+        
         self.callbackOnFinished = nil;
     }
-    [self.data setLength:0];
-    self.data = nil;
-    [self cancel];
 }
 
 
+
 @end
+

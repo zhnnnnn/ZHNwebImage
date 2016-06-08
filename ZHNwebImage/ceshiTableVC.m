@@ -21,23 +21,7 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-    self.statusArray =@[
-            @"http://ww2.sinaimg.cn/crop.0.0.920.300/48e3f28dgw1ephvzwunvjj20pk08cwg4.jpg",
-            @"http://ww1.sinaimg.cn/crop.0.0.720.720.1024/48e3f28djw8eix7rrtdlxj20k00k00tr.jpg",
-            @"http://ww1.sinaimg.cn/crop.0.0.2043.2043.1024/3d264de4gw1elmjqcn1f9j21kw1kwb29.jpg",
-            @"http://ww4.sinaimg.cn/crop.0.0.640.640/6cf8d7ebjw1ehfr60whp7j20hs0hsacf.jpg",
-            @"http://ww4.sinaimg.cn/crop.0.0.441.441.1024/6c19279egw1eidj25gl58j20ca0ca3zs.jpg",
-            @"http://ww2.sinaimg.cn/crop.0.0.640.640.640/a1d3feabjw1ecasunmkncj20hs0hsq4j.jpg",
-            @"http://ww1.sinaimg.cn/large/4e704b16jw1evvinwpsrrj205k05kmxd.jpg",
-            @"http://ww2.sinaimg.cn/woriginal/ebebae87jw1evvh9eq0yfj22io1w01kx.jpg",
-            @"http://ww2.sinaimg.cn/large/ebebae87jw1evvh9eq0yfj22io1w01kx.jpg",
-            @"http://ww2.sinaimg.cn/or180/ebebae87jw1evvh9eq0yfj22io1w01kx.jpg",
-            @"http://ww2.sinaimg.cn/wap720/ebebae87jw1evvh9eq0yfj22io1w01kx.jpg",
-            @"http://ww2.sinaimg.cn/or480/ebebae87jw1evvh9eq0yfj22io1w01kx.jpg",
-            @"http://ww2.sinaimg.cn/or360/ebebae87jw1evvh9eq0yfj22io1w01kx.jpg",
-            @"http://ww4.sinaimg.cn/crop.0.0.480.480.1024/ebebae87jw8edqmlxzypxj20dc0dcmxr.jpg",
-            @"http://ww1.sinaimg.cn/crop.0.0.920.300/68318509gw1eu2bptwynpj20pk08cdhc.jpg",
-            @"http://ww4.sinaimg.cn/crop.0.0.928.928.1024/68318509jw8eqj6kendz0j20ps0ps0tn.jpg"
+    self.statusArray =@[@"http://hwq-video.b0.upaiyun.com/image/e8afe58becd880ded60fee45266840c9.jpg",@"http://hwq-video.b0.upaiyun.com/image/e8afe58becd880ded60fee45266840c9.jpg",@"http://hwq-video.b0.upaiyun.com/image/e8afe58becd880ded60fee45266840c9.jpg",@"http://hwq-video.b0.upaiyun.com/image/e8afe58becd880ded60fee45266840c9.jpg",@"http://hwq-video.b0.upaiyun.com/image/e8afe58becd880ded60fee45266840c9.jpg",@"http://hwq-video.b0.upaiyun.com/image/e8afe58becd880ded60fee45266840c9.jpg",@"http://hwq-video.b0.upaiyun.com/image/e8afe58becd880ded60fee45266840c9.jpg",@"http://hwq-video.b0.upaiyun.com/image/e8afe58becd880ded60fee45266840c9.jpg"
     ];
     
 }
